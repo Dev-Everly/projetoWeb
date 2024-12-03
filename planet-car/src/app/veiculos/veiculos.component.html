@@ -1,0 +1,62 @@
+
+
+<form (ngSubmit)="cadastrar()">
+    <table>
+      <tr>
+        <td><label for="marca">Marca:</label></td>
+        <td><input type="text" id="marca" name="marca" [(ngModel)]="veiculo.marca" required></td>
+      </tr>
+      <tr>
+        <td><label for="modelo">Modelo:</label></td>
+        <td><input type="text" id="modelo" name="modelo" [(ngModel)]="veiculo.modelo" required></td>
+      </tr>
+      <tr>
+        <td><label for="valor">Valor:</label></td>
+        <td><input type="number" id="valor" name="valor" [(ngModel)]="veiculo.valor" required></td>
+      </tr>
+      <tr>
+        <td><label for="ano">Ano:</label></td>
+        <td><input type="number" id="ano" name="ano" [(ngModel)]="veiculo.ano" required></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit">Cadastrar</button></td>
+      </tr>
+    </table>
+  </form>
+  
+<h1>Veículos</h1>
+
+<hr>
+
+<table>
+    <tr>
+        <th>#id</th>
+        <th>modelo</th>
+        <th>valor</th>
+       
+        <th>ano</th>
+        <th>categoria</th>
+    </tr>
+
+    <tr *ngFor="let veiculo of veiculos">
+        <td>{{ veiculo.id }}</td>
+         
+        <td>{{ veiculo.modelo }}</td>
+        <td>{{ veiculo.valor }}</td> 
+         
+        <td>{{ veiculo.ano }}</td>
+        <td>{{ veiculo.categoria }}</td>
+
+        <td><button (click)="atualizar(veiculo.id)">Atualizar</button></td>
+  <td><button (click)="remover(veiculo.id)">Remover</button></td>
+       
+    </tr>
+
+
+    
+    
+     
+ 
+
+
+ 
